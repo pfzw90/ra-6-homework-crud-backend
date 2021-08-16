@@ -22,7 +22,7 @@ router.get('/notes', async (ctx, next) => {
 });
 
 router.post('/notes', async(ctx, next) => {
-    notes.push({...ctx.request.body});
+    notes.push(JSON.parse(ctx.request.body));
     ctx.response.status = 204;
 });
 
